@@ -1,0 +1,10 @@
+---
+layout: post
+title:  "Some boats I've built"
+date:   2021-02-03 23:22:30 -0800
+categories: jekyll update
+---
+
+![Greenland kayak at launch](https://smallboats.github.io/img/kayak_launch.jpeg)
+
+![Goat Island skiff at Tomales Bay, with Mochi the dog](https://smallboats.github.io/img/ghnm_tomales.jpeg)
