@@ -7,7 +7,7 @@
 		  <div class="mdl-card__supporting-text">
 		  	<p><strong>By: </strong>{{ commentData.name }}</p>
 		    <div class="comment__text">
-		    	{{ commentData.body | markdownify }}
+		    	{{ commentData.text | markdownify }}
 		    </div>
 		  </div>
 		</article>
@@ -22,7 +22,7 @@
 <form method="POST" action="https://comments.l3x.in/new">
 
     <label class="title" for="comment">Leave a comment</label>
-    <textarea id="comment" name="comment[body]" placeholder="Feel free to use Markdown" rows="5" required></textarea>
+    <textarea id="comment" name="comment[text]" placeholder="Feel free to use Markdown" rows="5" required></textarea>
 
     <div class="input">
         <input id="name" name="comment[name]" type="text" placeholder="Required" required>
