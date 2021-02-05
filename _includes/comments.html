@@ -3,7 +3,7 @@
 	{% for comment in comments reversed %}
 		{% assign commentData = comment[0].comment %}
 {{comment}}
-{{commentData}}
+{{comment[0]}}
 		<article class="comment mdl-card mdl-shadow--2dp">
 		  <div class="mdl-card__supporting-text">
 		  	<p><strong>By: </strong>{{ comment.comment.name }}</p>
