@@ -4,13 +4,10 @@
 		{% assign commentData = comments[1] %}
 
 		<article class="comment mdl-card mdl-shadow--2dp">
-		  <div class="mdl-card__title">
-		    <h2 class="mdl-card__title-text">{{ commentData.title }}</h2>
-		  </div>
 		  <div class="mdl-card__supporting-text">
 		  	<p><strong>By: </strong>{{ commentData.name }}</p>
 		    <div class="comment__text">
-		    	{{ commentData.text | markdownify }}
+		    	{{ commentData.body | markdownify }}
 		    </div>
 		  </div>
 		</article>
