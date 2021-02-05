@@ -38,8 +38,31 @@
     </ol>
 {{- end -}}
 
+	{% assign comments = site.data.comments | sort %}
+	
+	{% for comment in comments reversed %}
+		{% assign commentData = comments[1] %}
 
-<form method="POST" action="{{ .Param "staticCommentsUrl" }}">
+		<article class="comment mdl-card mdl-shadow--2dp">
+		  <div class="mdl-card__title">
+		    <h2 class="mdl-card__title-text">{{ commentData.title }}</h2>
+		  </div>
+		  <div class="mdl-card__supporting-text">
+		  	<p><strong>By: </strong>{{ commentData.name }}</p>
+		    <div class="comment__text">
+		    	{{ commentData.text | markdownify }}
+		    </div>
+		  </div>
+		</article>
+	{% endfor %}
+
+
+
+
+
+
+
+<form method="POST" action="https://comments.l3x.in/new">
 
     <label class="title" for="comment">Leave a comment</label>
     <textarea id="comment" name="comment[body]" placeholder="Feel free to use Markdown" rows="5" required></textarea>
@@ -54,9 +77,9 @@
         <input id="submit" type="submit" value="Post Comment">
     </div>
     <small>* hashed with MD5, i.e. never shown nor stored in plain text</small>
-    <input type="hidden" name="config[redirect]" value="{{ $receivedPage.Permalink }}">
-    <input type="hidden" name="config[repo]" value="{{ .Param "staticCommentsRepo" }}">
-    <input type="hidden" name="config[path]" value="{{ $baseDir }}">
+    <input type="hidden" name="config[redirect]" value="{{ site.url }}">
+    <input type="hidden" name="config[repo]" value="boatbrain/boatbrain.github.io">
+    <input type="hidden" name="config[path]" value="{{ site.url }}{{ page.url }}">
     <!-- <input type="hidden" name="akismet[blog]" value="{{ .Site.BaseURL }}">
     <input type="hidden" name="akismet[blog_lang]" value="en">
     <input type="hidden" name="akismet[authorKey]" value="name">
